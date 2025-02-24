@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundraising Campaigns</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #f0f8ff, #c1e4f5);
+      color: #333;
+        }
+      .container {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    margin-left: 200px; /* Adds space between sidebar and content */
+}
+
+        .campaigns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased gap between cards */
+    justify-content: center;
+}
+
+
+        .campaign-card:hover {
+            transform: scale(1.05);
+        }
+
+
+.campaign-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.campaign-card {
+    background: white;
+    padding: 10px; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px; /* Adjusted width */
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 350px; /* Reduced height */
+    overflow: hidden; /* Prevents content overflow */
+}
+
+.campaign-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 140px; /* Reduced image height */
+    object-fit: cover;
+}
+
+.campaign-card h4 {
+    margin: 5px 0;
+    font-size: 16px; /* Adjusted font size */
+}
+
+.campaign-card p {
+    font-size: 14px; /* Smaller text */
+    flex-grow: 1;
+    margin-bottom: 5px; /* Reduced space */
+}
+
+.progress-container {
+    margin-top: auto;
+}
+
+.progress-bar {
+    height: 8px; /* Slightly reduced bar height */
+}
+        .progress-bar div {
+            background: #e74c3c;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .read-more {
+            color: #e74c3c;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .campaigns {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    background-color: #111;
+    color: white;
+    top: 0;  /* Ensure it starts from the top */
+    padding-top: 0;  /* Remove extra padding */
+}
+
+
+        .sidebar h2 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            color: white;
+            padding: 15px;
+            display: block;
+            text-decoration: none;
+            font-size: 16px;
+            border-bottom: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover, .sidebar .active {
+            background-color: #e74c3c;
+            padding-left: 20px;
+        }
+        .main-content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+ <div class="sidebar">
+    <h2>DASHBOARD</h2>
+    <a href="home.html"><i class="fas fa-exclamation-triangle"></i> Crisis Events</a>
+    <a href="weather.html"><i class="fas fa-cloud-sun"></i> Weather</a>
+    <a href="inv.html"><i class="fas fa-users"></i>Inventory</a>
+    <a href="post.html"><i class="fas fa-newspaper"></i> Posts</a>
+    <a href="fund.html"><i class="fas fa-coins"></i> Fundraising</a>
+    <a href="partners.html"><i class="fas fa-handshake"></i> Partners</a>
+    <a href="profile.html"><i class="fas fa-user"></i> User Profile</a>
+</div>
+  <div class="container">
+    <h1>Fundraising Campaigns</h1>
+    <div class="campaigns">
+      <div class="row">
+    <div class="campaign-card">
+        <img src="https://news.mit.edu/sites/default/files/images/202302/MIT-Earthquake-relief-01.jpg">
+        <h4>Disaster Relief </h4>
+        <p>Provides urgent assistance to communities affected by natural disasters like earthquakes, floods, and hurricanes. Funds help with emergency shelter, food, and medical aid..</p>
+        <a href="donation.html" class="read-more">Donate Now</a>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div style="width: 70%;"></div>
+            </div>
+            <p>Rs. 2,100,000 Raised of Rs. 3,000,000</p>
+        </div>
+    </div>
+    <div class="campaign-card">
+        <img src="https://www.brookings.edu/wp-content/uploads/2020/03/AdobeStock_53804317.jpeg?quality=75&w=1500">
+        <h4>Medical Aid</h4>
+        <p>PSupports individuals in need of medical treatments, surgeries, or expensive medications. Also helps hospitals and clinics with medical supplies and equipment.</p>
+        <a href="donation.html" class="read-more">Donate Now</a>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div style="width: 50%;"></div>
+            </div>
+            <p>Rs. 1,500,000 Raised of Rs. 3,000,000</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="campaign-card">
+        <img src="https://media.istockphoto.com/id/1181962948/photo/volunteers-scooping-the-food-to-share-with-the-needy-concept-of-providing-free-food-to.jpg?s=612x612&w=0&k=20&c=pWU0efeNYR58cEKMA7FlhGTUZY_NFytbJJ9XOxZe0HA=" alt="Campaign Image">
+        <h4>Food and Shelter </h4>
+        <p>Provides meals to the hungry, supports food banks, builds homes for the homeless, renovates shelters, and offers rent assistance to those in need.</p>
+        <a href="donation.html" class="read-more">Donate Now</a>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div style="width: 80%;"></div>
+            </div>
+            <p>Rs. 4,000,000 Raised of Rs. 5,000,000</p>
+        </div>
+    </div>
+    <div class="campaign-card">
+        <img src="https://assets.globalpartnership.org/s3fs-public/styles/standard_blog_banner/public/8719547653_c4eff38bbc_b.jpg?VersionId=X6U6LjCXeo7oQ_fndhFMEHyLTNJ260r0&itok=r0bJER3k">
+        <h4>Educational Support</h4>
+        <p> Helps students afford tuition, school supplies, books, and technology. Also funds scholarships and educational programs for underprivileged children.</p>
+        <a href="donation.html" class="read-more">Donate Now</a>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div style="width: 50%;"></div>
+            </div>
+            <p>Rs. 1,500,000 Raised of Rs. 3,000,000</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="campaign-card">
+        <img src="https://youthincmag.com/wp-content/uploads/2014/05/Animals.jpg">
+        <h4>Animal Welfare</h4>
+        <p>Supports rescue operations, animal shelters, veterinary care, and initiatives to prevent animal cruelty and promote adoption.</p>
+        <a href="donation.html" class="read-more">Donate Now</a>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div style="width: 50%;"></div>
+            </div>
+            <p>Rs. 1,500,000 Raised of Rs. 3,000,000</p>
+        </div>
+    </div>
+    <div class="campaign-card">
+        <img src="https://blog.ipleaders.in/wp-content/uploads/2021/06/child-adoption-india-1.jpg">
+        <h4>Children and Orphan Care</h4>
+        <p>Provides food, shelter, healthcare, and education to orphans and vulnerable children, ensuring they grow up in a safe and supportive environment.</p>
+        <a href="donaton.html" class="read-more">Donate Now</a>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div style="width: 50%;"></div>
+            </div>
+            <p>Rs. 1,500,000 Raised of Rs. 3,000,000</p>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #f0f8ff, #c1e4f5);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+        .payment-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+            margin-top: 50px;
+        }
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 20px 0;
+        }
+        .confirm-btn {
+            background: green;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .confirm-btn:hover {
+            background: darkgreen;
+        }
+        /* Popup styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+      background: linear-gradient(to bottom right, #f0f8ff, #c1e4f5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .popup h2 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+   <div class="payment-container">
+    <h2>Scan QR Code to Donate</h2>
+    <img src="/static/images/qr.jpg" class="qr-code" alt="QR Code">
+    <p>Scan the QR code using your mobile banking app or UPI scanner to complete the payment.</p>
+    <button class="confirm-btn" onclick="showThankYou()">Done</button>
+</div>
+
+<!-- Thank You Popup -->
+<div id="thank-you-popup" class="popup" style="display: none;">
+    <h2>Thank you for being amazing!</h2>
+    <p>The world needs more hearts like yours.❤️<br> You just made a BIG difference!✨ </p>
+</div>
+
+<script>
+    function showThankYou() {
+        const popup = document.getElementById('thank-you-popup');
+        popup.style.display = 'block';
+
+        // Hide the popup after 3 seconds and then redirect to home.html
+        setTimeout(() => {
+            popup.style.display = 'none';
+            window.location.href = "home.html"; // Redirect to home page
+        }, 2500);
+    }
+</script>
+
+
+</body>
+</html>

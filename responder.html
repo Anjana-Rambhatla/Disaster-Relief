@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search for responders based on name, role, or specialization.">
+    <title>Responder Search</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-section {
+            background: url('https://wallpapercave.com/wp/wp2464233.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .search-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .search-section input {
+            width: 80%;
+            padding: 10px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+            margin-bottom: 30px;
+            outline: none;
+        }
+
+        .search-section input:focus {
+            border-color: #007bff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .responder-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        .responder-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .responder-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .responder-card h5 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .responder-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 767px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Responder Search</h1>
+            <p>Find the right responder based on their role, skills, or name.</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Search responders by name, role, or specialization..." onkeyup="searchResponders()">
+    </section>
+
+    <!-- Responders Section -->
+    <section class="container py-5">
+        <h2 class="section-title">Search Results</h2>
+        <div class="row" id="responderList">
+            <!-- Responder 1 -->
+            <div class="col-md-3 mb-4 responder-card" data-name="John Doe" data-role="EMT">
+                <div class="responder-card">
+                    <img src="https://via.placeholder.com/150" alt="Responder 1">
+                    <h5>John Doe</h5>
+                    <p>Emergency Medical Technician (EMT)</p>
+                </div>
+            </div>
+
+            <!-- Responder 2 -->
+            <div class="col-md-3 mb-4 responder-card" data-name="Jane Smith" data-role="Firefighter">
+                <div class="responder-card">
+                    <img src="https://via.placeholder.com/150" alt="Responder 2">
+                    <h5>Jane Smith</h5>
+                    <p>Firefighter with experience in hazardous situations</p>
+                </div>
+            </div>
+
+            <!-- Responder 3 -->
+            <div class="col-md-3 mb-4 responder-card" data-name="Samuel Lee" data-role="Search and Rescue">
+                <div class="responder-card">
+                    <img src="https://via.placeholder.com/150" alt="Responder 3">
+                    <h5>Samuel Lee</h5>
+                    <p>Expert in search and rescue operations</p>
+                </div>
+            </div>
+
+            <!-- Responder 4 -->
+            <div class="col-md-3 mb-4 responder-card" data-name="Emily Davis" data-role="Logistics Support">
+                <div class="responder-card">
+                    <img src="https://via.placeholder.com/150" alt="Responder 4">
+                    <h5>Emily Davis</h5>
+                    <p>Logistics support expert for disaster relief</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Disaster Relief | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Search Functionality -->
+    <script>
+        function searchResponders() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let responders = document.querySelectorAll('.responder-card');
+
+            responders.forEach(function (responder) {
+                let name = responder.getAttribute('data-name').toLowerCase();
+                let role = responder.getAttribute('data-role').toLowerCase();
+
+                if (name.includes(input) || role.includes(input)) {
+                    responder.style.display = '';
+                } else {
+                    responder.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

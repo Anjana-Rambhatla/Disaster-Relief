@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crisis Events Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #f0f8ff, #c1e4f5);
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            background-color: #111;
+            padding-top: 20px;
+            color: white;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            color: white;
+            padding: 15px;
+            display: block;
+            text-decoration: none;
+            font-size: 16px;
+            border-bottom: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover, .sidebar .active {
+            background-color: #e74c3c;
+            padding-left: 20px;
+        }
+
+        .main-content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+
+        .chart-container {
+            width: 90%;  /* Increased width */
+            max-width: 800px; /* Prevents too large sizes */
+            height: 500px; /* Increased height */
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>DASHBOARD</h2>
+        <a href="home.html"><i class="fas fa-exclamation-triangle"></i> Crisis Events</a>
+        <a href="weather.html"><i class="fas fa-cloud-sun"></i> Weather</a>
+        <a href="inv.html"><i class="fas fa-users"></i> Inventory</a>
+        <a href="post.html"><i class="fas fa-newspaper"></i> Posts</a>
+        <a href="fund.html"><i class="fas fa-coins"></i> Fundraising</a>
+        <a href="partners.html"><i class="fas fa-handshake"></i> Partners</a>
+        <a href="profile.html"><i class="fas fa-user"></i> User Profile</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Get chart context
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        // Chart data
+        const data = {
+            labels: ['Boats', 'Clothes', 'Food', 'Water', 'Medicine'],
+            datasets: [{
+                label: 'Supplies Distribution',
+                data: [65, 59, 80, 45, 70],
+                backgroundColor: [
+                    'rgba(255, 179, 186, 0.6)', // Pastel Pink
+                    'rgba(255, 223, 186, 0.6)', // Pastel Orange
+                    'rgba(255, 255, 186, 0.6)', // Pastel Yellow
+                    'rgba(186, 255, 201, 0.6)', // Pastel Green
+                    'rgba(186, 225, 255, 0.6)'  // Pastel Blue
+                ],
+                borderColor: [
+                    'rgb(255, 179, 186)',
+                    'rgb(255, 223, 186)',
+                    'rgb(255, 255, 186)',
+                    'rgb(186, 255, 201)',
+                    'rgb(186, 225, 255)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // Chart configuration
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        // Create and render the chart
+        new Chart(ctx, config);
+    </script>
+
+</body>
+</html>
